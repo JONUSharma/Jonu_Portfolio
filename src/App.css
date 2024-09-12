@@ -1,0 +1,41 @@
+.heading-span {
+    margin-left: -60px;
+
+}
+
+.nav-items {
+    margin-left: 75px;
+}
+
+b {
+    color: rgb(65, 153, 65);
+}
+
+.header {
+    position: sticky;
+    top: 0px;
+}
+
+.body-img:hover {
+    box-shadow: 0 0 0 5px whitesmoke, 0 0 0 25px whitesmoke,
+        0 0 40px whitesmoke;
+}
+
+.pe 
+{
+    cursor: pointer;
+}
+.hover{
+    transition: all 0.3 ;
+}
+.hover:hover
+{
+    transform: scale(1.15);
+}
+.nav1:hover
+{
+text-decoration: underline;
+}
+
+
+
