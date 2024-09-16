@@ -1,25 +1,40 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import ProjectContainer from './ProjectContainer'
 import { FaGithub } from 'react-icons/fa6';
 import { FaLinkedin } from "react-icons/fa";
 
+
 function Contactus() {
+
+    const userName = useRef("")
+    const userEmail = useRef("")
+    const userMeassage = useRef("")
+
+    const HandleSubmit = (e) => {
+        e.preventDefault();
+        const username = userName.current.value;
+        const usermail = userEmail.current.value;
+        const userMeassage2 = userMeassage.current.value;
+       console.log(`Your userName is :${username} `);
+       console.log(`Your userName is :${usermail} `);
+       console.log(`Your userName is :${userMeassage2} `);
+    }
     return (<>
         <ProjectContainer>
             <h1 name = "Contact" className="display-5 fw-bold text-warning link-success pe text-decoration-underline">Contact me</h1>
             <div>
                 <div className="col-md-10 mx-auto col-lg-5 z-n1">
-                    <form className="p-4 p-md-5 border rounded-3 bg-warning-subtle ">
+                    <form onSubmit={HandleSubmit} className="p-4 p-md-5 border rounded-3 bg-warning-subtle ">
                         <div className="form-floating mb-3 ">
-                            <input type="text" className="form-control " id="floatingInput" placeholder="name@example.com" fdprocessedid="amzzhk" />
+                            <input ref={userName} type="text" className="form-control " id="floatingInput" placeholder="name@example.com" fdprocessedid="amzzhk" />
                             <label htmlFor="floatingInput">Enter your full name...</label>
                         </div>
                         <div className="form-floating mb-3">
-                            <input type="email" className="form-control" id="floatingEmail" placeholder="name@example.com" fdprocessedid="amzzhk" />
+                            <input ref = {userEmail} type="email" className="form-control" id="floatingEmail" placeholder="name@example.com" fdprocessedid="amzzhk" />
                             <label htmlFor="floatingInput">Email address</label>
                         </div>
                         <div className="form-floating mb-3">
-                            <textarea id="floatingMessage" name="message" className="form-control" required placeholder='name@example.' ></textarea>
+                            <textarea id="floatingMessage" ref={userMeassage} name="message" className="form-control" required placeholder='name@example.' ></textarea>
                             <label htmlFor="floatingMessage">Message</label>
 
                         </div>
